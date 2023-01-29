@@ -18,6 +18,7 @@
     .player__control {
       background-color: black;
       line-height: 1.5;
+      display: flex;
     }
     .player__button {
       border: none;
@@ -25,12 +26,16 @@
       background-color: transparent;
       font-size: 14pt;
       padding: 5px;
+      margin: 2px;
     }
     .player__button__icon {
       color: white;
       height: 12px;
       width: 12px;
       margin: 5px;
+    }
+    .empty__place {
+      flex-grow: 1;
     }
   </style>
 </head>
@@ -49,6 +54,10 @@
         </button>
         <button class="player__button js-volume-button" hidden>
           <i class="player__button__icon fa fa-volume-off" aria-hidden="true"></i>
+        </button>
+        <div class="empty__place"></div>
+        <button class="player__button js-fullscreen-button">
+          <i class="player__button__icon fa fa-expand" aria-hidden="true"></i>
         </button>
       </div>
     </div>
