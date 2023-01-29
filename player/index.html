@@ -5,11 +5,21 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
   <style>
-    button {
+    .player__basis {
+      width: 800px;
+      height: 600px;
+    }
+    .player__container {
+      width: 100%;
+      height: 100%
+    }
+    .player__contol {
+      background-color: black;
+    }
+    .player__button {
       border: none;
       cursor: pointer;
       background-color: transparent;
-      
     }
     .fa {
       color: white;
@@ -17,11 +27,11 @@
   </style>
 </head>
 <body>
-    <div id="player" style="width: 800px; height: 600px;">
-      <div class="js-video-container" style="width: 100%; height: 100%"></div>
-      <div style="background-color: black;">
-        <button class="js-play-button" hidden><i class="fa fa-play" aria-hidden="true"></i></button>
-        <button class="js-pause-button" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
+    <div id="player" class="player__basis">
+      <div class="player__container js-video-container"></div>
+      <div class="player__contol">
+        <button class="player__button js-play-button" hidden><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="player__button js-pause-button" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
       </div>
     </div>
     
