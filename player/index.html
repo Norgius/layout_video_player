@@ -26,12 +26,11 @@
       background-color: transparent;
       font-size: 14pt;
       padding: 5px;
-      margin: 2px;
     }
     .player__button__icon {
       color: white;
-      height: 12px;
-      width: 12px;
+      height: 16px;
+      width: 16px;
       margin: 5px;
     }
     .empty__place {
@@ -40,27 +39,27 @@
   </style>
 </head>
 <body>
-    <div id="player" class="player__basis">
-      <div class="player__container js-video-container"></div>
-      <div class="player__control">
-        <button class="player__button js-play-button" hidden>
-          <i class="player__button__icon fa fa-play" aria-hidden="true"></i>
-        </button>
-        <button class="player__button js-pause-button" hidden>
-          <i class="player__button__icon fa fa-pause" aria-hidden="true"></i>
-        </button>
-        <button class="player__button js-mute-button" hidden>
-          <i class="player__button__icon fa fa-volume-up" aria-hidden="true"></i>
-        </button>
-        <button class="player__button js-volume-button" hidden>
-          <i class="player__button__icon fa fa-volume-off" aria-hidden="true"></i>
-        </button>
-        <div class="empty__place"></div>
-        <button class="player__button js-fullscreen-button">
-          <i class="player__button__icon fa fa-expand" aria-hidden="true"></i>
-        </button>
-      </div>
+  <div id="player" class="player__basis">
+    <div class="player__container js-video-container"></div>
+    <div class="player__control">
+      <button class="player__button js-play-button" hidden>
+        <i class="player__button__icon fa fa-play" aria-hidden="true"></i>
+      </button>
+      <button class="player__button js-pause-button" hidden>
+        <i class="player__button__icon fa fa-pause" aria-hidden="true"></i>
+      </button>
+      <button class="player__button js-mute-button" hidden>
+        <i class="player__button__icon fa fa-volume-up" aria-hidden="true"></i>
+      </button>
+      <button class="player__button js-volume-button" hidden>
+        <i class="player__button__icon fa fa-volume-off" aria-hidden="true"></i>
+      </button>
+      <div class="empty__place"></div>
+      <button class="player__button js-fullscreen-button">
+        <i class="player__button__icon fa fa-expand" aria-hidden="true"></i>
+      </button>
     </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
