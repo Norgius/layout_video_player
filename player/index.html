@@ -20,21 +20,18 @@
       background-color: black;
       line-height: 1.5;
       display: flex;
+      align-items: center;
     }
     .player__button {
       border: none;
       cursor: pointer;
       background-color: transparent;
       font-size: 14pt;
-      padding: 5px;
-    }
-    .player__button__icon {
       color: white;
-      height: 16px;
-      width: 16px;
-      margin: 5px;
+      height: 35px;
+      width: 35px;
     }
-    .empty__place {
+    .empty_place {
       flex-grow: 1;
     }
   </style>
@@ -44,20 +41,20 @@
     <div class="player__container js-video-container"></div>
     <div class="player__control">
       <button class="player__button js-play-button" hidden>
-        <i class="player__button__icon fa fa-play" aria-hidden="true"></i>
+        <i class="fa fa-play" aria-hidden="true"></i>
       </button>
       <button class="player__button js-pause-button" hidden>
-        <i class="player__button__icon fa fa-pause" aria-hidden="true"></i>
+        <i class="fa fa-pause" aria-hidden="true"></i>
       </button>
       <button class="player__button js-mute-button" hidden>
-        <i class="player__button__icon fa fa-volume-up" aria-hidden="true"></i>
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
       </button>
       <button class="player__button js-volume-button" hidden>
-        <i class="player__button__icon fa fa-volume-off" aria-hidden="true"></i>
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
       </button>
-      <div class="empty__place"></div>
+      <div class="empty_place"></div>
       <button class="player__button js-fullscreen-button">
-        <i class="player__button__icon fa fa-expand" aria-hidden="true"></i>
+        <i class="fa fa-expand" aria-hidden="true"></i>
       </button>
     </div>
   </div>
