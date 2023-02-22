@@ -3,27 +3,49 @@
 <head>
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="static/icon.png">
   <style>
-    .player__basis {
+    .player {
       display: flex;
       flex-direction: column;
       width: 800px;
       height: 600px;
       box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.4);
     }
-    .player__container {
+    .screen {
       flex-grow: 1;
     }
-    .player__control {
+    .player .bottom-controls {
       background-color: black;
       line-height: 1.5;
       height: 42px;
       display: flex;
       align-items: center;
     }
-    .player__button {
+    .player .left-buttons {
+      display: flex;
+      height: 37px;
+      flex-direction: row;
+      align-items: center;
+    }
+    .player .viewing-panel {
+      display: flex;
+      flex-grow: 1;
+      height: 37px;
+      flex-direction: row;
+      align-items: center;
+    }
+    .player .right-buttons {
+      display: flex;
+      height: 37px;
+      flex-direction: row;
+      align-items: center;
+    }
+    .player .player-button {
       border: none;
       cursor: pointer;
       background-color: transparent;
@@ -32,31 +54,46 @@
       height: 37px;
       width: 37px;
     }
-    .empty_place {
+    .player .viewing-panel {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+    }
+    .player .viewing-progressbar {
       flex-grow: 1;
     }
   </style>
 </head>
 <body>
-  <div id="player" class="player__basis">
-    <div class="player__container js-video-container"></div>
-    <div class="player__control">
-      <button class="player__button js-play-button" hidden>
-        <i class="fa fa-play" aria-hidden="true"></i>
-      </button>
-      <button class="player__button js-pause-button" hidden>
-        <i class="fa fa-pause" aria-hidden="true"></i>
-      </button>
-      <button class="player__button js-mute-button" hidden>
-        <i class="fa fa-volume-up" aria-hidden="true"></i>
-      </button>
-      <button class="player__button js-volume-button" hidden>
-        <i class="fa fa-volume-off" aria-hidden="true"></i>
-      </button>
-      <div class="empty_place"></div>
-      <button class="player__button js-fullscreen-button">
-        <i class="fa fa-expand" aria-hidden="true"></i>
-      </button>
+  <div id="player" class="player">
+    <div class="screen js-video-container"></div>
+    <div class="bottom-controls">
+      <div class="left-buttons">
+        <button class="player-button js-play-button" hidden>
+          <i class="fa fa-play" aria-hidden="true"></i>
+        </button>
+        <button class="player-button js-pause-button" hidden>
+          <i class="fa fa-pause" aria-hidden="true"></i>
+        </button>
+        <button class="player-button js-mute-button" hidden>
+          <i class="fa fa-volume-up" aria-hidden="true"></i>
+        </button>
+        <button class="player-button js-volume-button" hidden>
+          <i class="fa fa-volume-off" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="viewing-panel">
+          <span class="viewing-time js-current-time"></span>
+        <div class="viewing-progressbar">
+        </div>
+          <span class="video-duration js-duration"></span>
+      </div>
+      <div>
+        <div class="right-buttons">
+          <button class="player-button js-fullscreen-button">
+            <i class="fa fa-expand" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
