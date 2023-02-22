@@ -59,7 +59,27 @@
       font-family: 'Roboto', sans-serif;
     }
     .player .viewing-progressbar {
+      display: flex;
+      height: 5px;
+      background-color: none;
       flex-grow: 1;
+    }
+    .player .viewing-progressbar-now {
+      height: 5px;
+      background-color: red;
+      margin-left: 10px;
+      border-radius: 2px;
+    }
+    .dot {
+      height: 8px;
+      width: 8px;
+      margin: -4px 0px 0px -4px;
+      background-color: red;
+      border-radius: 50%;
+      border-style: solid;
+      border-color: white;
+      border-width: 3px;
+      display: inline-block;
     }
   </style>
 </head>
@@ -82,10 +102,12 @@
         </button>
       </div>
       <div class="viewing-panel">
-          <span class="viewing-time js-current-time"></span>
-        <div class="viewing-progressbar">
+        <span class="viewing-time js-current-time"></span>
+        <div class="viewing-progressbar js-progress">
+          <div class="viewing-progressbar-now js-progress-slider"></div>
+          <span class="dot"></span>
         </div>
-          <span class="video-duration js-duration"></span>
+        <span class="video-duration js-duration"></span>
       </div>
       <div>
         <div class="right-buttons">
