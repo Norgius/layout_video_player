@@ -63,23 +63,36 @@
       height: 5px;
       background-color: none;
       flex-grow: 1;
+      align-items: center;
     }
-    .player .viewing-progressbar-now {
+    .player .progressbar {
       height: 5px;
       background-color: red;
       margin-left: 10px;
       border-radius: 2px;
     }
     .dot {
+      opacity: 0;
       height: 8px;
       width: 8px;
-      margin: -4px 0px 0px -4px;
+      margin-left: -6px;
       background-color: red;
       border-radius: 50%;
       border-style: solid;
       border-color: white;
       border-width: 3px;
       display: inline-block;
+    }
+    .bottom-controls:hover .dot {
+      opacity: 1;
+      transition-property: all;
+      transition-duration: 300ms;
+      transition-timing-function: ease-in;
+    }
+    .bottom-controls .dot {
+      transition-property: all;
+      transition-duration: 300ms;
+      transition-timing-function: ease-out;
     }
   </style>
 </head>
@@ -104,7 +117,7 @@
       <div class="viewing-panel">
         <span class="viewing-time js-current-time"></span>
         <div class="viewing-progressbar js-progress">
-          <div class="viewing-progressbar-now js-progress-slider"></div>
+          <div class="progressbar js-progress-slider"></div>
           <span class="dot"></span>
         </div>
         <span class="video-duration js-duration"></span>
