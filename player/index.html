@@ -3,118 +3,30 @@
 <head>
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
   <link rel="stylesheet" href="static/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="static/v-player.css">
   <link rel="icon" href="static/icon.png">
-  <style>
-    .player {
-      display: flex;
-      flex-direction: column;
-      width: 800px;
-      height: 600px;
-      box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.4);
-    }
-    .screen {
-      flex-grow: 1;
-    }
-    .player .bottom-controls {
-      background-color: black;
-      line-height: 1.5;
-      height: 42px;
-      display: flex;
-      align-items: center;
-    }
-    .player .left-buttons {
-      display: flex;
-      height: 37px;
-      flex-direction: row;
-      align-items: center;
-    }
-    .player .viewing-panel {
-      display: flex;
-      flex-grow: 1;
-      height: 37px;
-      flex-direction: row;
-      align-items: center;
-    }
-    .player .right-buttons {
-      display: flex;
-      height: 37px;
-      flex-direction: row;
-      align-items: center;
-    }
-    .player .player-button {
-      border: none;
-      cursor: pointer;
-      background-color: transparent;
-      font-size: 15pt;
-      color: white;
-      height: 37px;
-      width: 37px;
-    }
-    .player .viewing-panel {
-      color: white;
-      font-family: 'Roboto', sans-serif;
-    }
-    .player .viewing-progressbar {
-      display: flex;
-      height: 5px;
-      background-color: transparent;
-      flex-grow: 1;
-      align-items: center;
-    }
-    .player .progressbar {
-      height: 5px;
-      background-color: red;
-      margin-left: 10px;
-      border-radius: 2px;
-    }
-    .dot {
-      opacity: 0;
-      height: 8px;
-      width: 8px;
-      margin-left: -6px;
-      background-color: red;
-      border-radius: 50%;
-      border-style: solid;
-      border-color: white;
-      border-width: 3px;
-      display: inline-block;
-    }
-    .bottom-controls:hover .dot {
-      opacity: 1;
-      transition-property: all;
-      transition-duration: 300ms;
-      transition-timing-function: ease-in;
-    }
-    .bottom-controls .dot {
-      transition-property: all;
-      transition-duration: 300ms;
-      transition-timing-function: ease-out;
-    }
-  </style>
 </head>
 <body>
-  <div id="player" class="player">
-    <div class="screen js-video-container"></div>
+  <div id="player" class="v-player">
+    <div class="v-screen js-video-container"></div>
     <div class="bottom-controls">
-      <div class="left-buttons">
-        <button class="player-button js-play-button" hidden>
-          <i class="fa fa-play" aria-hidden="true"></i>
-        </button>
-        <button class="player-button js-pause-button" hidden>
-          <i class="fa fa-pause" aria-hidden="true"></i>
-        </button>
-        <button class="player-button js-mute-button" hidden>
-          <i class="fa fa-volume-up" aria-hidden="true"></i>
-        </button>
-        <button class="player-button js-volume-button" hidden>
-          <i class="fa fa-volume-off" aria-hidden="true"></i>
-        </button>
-      </div>
+      <button class="player-button js-play-button" hidden>
+        <i class="fa fa-play" aria-hidden="true"></i>
+      </button>
+      <button class="player-button js-pause-button" hidden>
+        <i class="fa fa-pause" aria-hidden="true"></i>
+      </button>
+      <button class="player-button js-mute-button" hidden>
+        <i class="fa fa-volume-up" aria-hidden="true"></i>
+      </button>
+      <button class="player-button js-volume-button" hidden>
+        <i class="fa fa-volume-off" aria-hidden="true"></i>
+      </button>
       <div class="viewing-panel">
         <span class="viewing-time js-current-time"></span>
         <div class="viewing-progressbar js-progress">
@@ -123,13 +35,9 @@
         </div>
         <span class="video-duration js-duration"></span>
       </div>
-      <div>
-        <div class="right-buttons">
-          <button class="player-button js-fullscreen-button">
-            <i class="fa fa-expand" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
+      <button class="player-button js-fullscreen-button">
+        <i class="fa fa-expand" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 
